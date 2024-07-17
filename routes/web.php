@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\HomeApiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\CategoryController;
@@ -17,14 +16,6 @@ use App\Http\Controllers\CodeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-################ APIS ######################
-Route::group(['prefix' => 'test'], function () {
-    Route::get('/', [HomeApiController::class, 'index']);
-    Route::get('getsubcat/{id}', [HomeApiController::class, 'getSubCat']);
-    Route::get('viewcode/{id}', [HomeApiController::class, 'viewCode']);
-    Route::post('filtercodes', [HomeApiController::class, 'filtercodes']);
-});
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('viewcode/{id}', [HomeController::class, 'viewCode']);
