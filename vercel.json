@@ -8,7 +8,7 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
   }],
-  "public": "true",
+  "public": true,
   "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
