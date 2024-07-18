@@ -5,15 +5,10 @@
       "api/index.php": { "runtime": "vercel-php@0.7.1" }
   },
  "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/(admin_assets|upload|web)/(.*)",
-      "dest": "public/$1/$2"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "public/index.php"
-    }
+  {
+    "src": "/(.*)",
+    "dest": "public/$1"
+  }
   ],
   "public": true,
   "env": {
