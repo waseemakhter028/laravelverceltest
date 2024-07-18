@@ -7,7 +7,7 @@
  "routes": [
     { "handle": "filesystem" },
     {
-      "src": "/(css|js|images)/(.*)",
+      "src": "/(admin_assets|upload|web)/(.*)",
       "dest": "public/$1/$2"
     },
     {
