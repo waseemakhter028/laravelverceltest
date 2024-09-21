@@ -7,6 +7,10 @@
   "public": true,
   "routes": [
     {
+      "src": "/admin_assets/(.*)",
+      "dest": "/public/admin_assets/"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }],
