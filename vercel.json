@@ -5,11 +5,13 @@
       "api/index.php": { "runtime": "vercel-php@0.7.1" }
   },
   "public": true,
+  "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
+    ],
   "routes": [
-    {
-      "src": "/admin_assets/(.*)",
-      "dest": "/public/admin_assets/"
-    },
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
