@@ -69,7 +69,7 @@
     <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-3">
                     
                     <div class="shop__sidebar">
@@ -136,7 +136,7 @@
 
                    
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- Shop Section End -->
