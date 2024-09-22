@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Code;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 
 
 class CodeController extends Controller
@@ -39,12 +38,11 @@ class CodeController extends Controller
 
             $this->validate($request, $rules, $messages);
             $code = new Code;
-            $banner_image = $request->file('image'); //uploading the image
-            $folder_dir = public_path() . "/upload/";
             if ($request->hasFile('image')) {
-                $image_name =  uniqid() . $banner_image->getClientOriginalName();
-                $banner_image->move($folder_dir, $image_name);
-                $code->image = $image_name;
+               
+                $image = $request->file('image');
+                $imageContents = file_get_contents($image->getRealPath());
+                $code->image = base64_encode($imageContents);
             }
             $code->title = strip_tags($request->title);
             $code->description = htmlspecialchars($request->description);
@@ -84,16 +82,11 @@ class CodeController extends Controller
             $code = Code::findOrFail($request->id);
 
             if ($request->hasFile('image')) {
-                $banner_image = $request->file('image'); //uploading the image
-                $folder_dir =  public_path() . "/upload/";
-                if (File::exists($folder_dir . $code->image)) {
-                    #deleting old image
-                    File::delete($folder_dir . $code->image);
-                }
 
-                $image_name =  uniqid() . $banner_image->getClientOriginalName();
-                $banner_image->move($folder_dir, $image_name);
-                $code->image = $image_name;
+                $image = $request->file('image');
+                $imageContents = file_get_contents($image->getRealPath());
+                $code->image = base64_encode($imageContents);
+
             }
             $code->title = strip_tags($request->title);
             $code->description = htmlspecialchars($request->description);
@@ -116,11 +109,6 @@ class CodeController extends Controller
     {
         $code = Code::findOrFail($id);
 
-        $folder_dir =  public_path() . "/upload/";
-        if (File::exists($folder_dir . $code->image)) {
-            #deleting old image
-            File::delete($folder_dir . $code->image);
-        }
         $save_status = $code->delete();
         if ($save_status) {
             return redirect('adminpanel/code/list')->with('success', 'Code Details Deleted Successfully');
