@@ -3,6 +3,8 @@ echo "Running composer"
 composer global require hirak/prestissimo
 composer install --no-dev --working-dir=/var/www/html
 
+echo "Clear view..."
+php artisan view:clear
 
 echo "Caching config..."
 php artisan config:cache
