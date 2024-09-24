@@ -44,6 +44,11 @@
       <link rel="stylesheet" type="text/css" href="{{asset('/admin_assets')}}/assets/css/widget.css">
       <link rel="stylesheet" type="text/css" href="{{asset('/admin_assets')}}/assets/css/toastr.css">
       <link rel="stylesheet" type="text/css" href="{{asset('/admin_assets')}}/assets/css/prism.css">
+      <style>
+        #dom-jqry_paginate{
+          display: none;
+        }
+      </style>
     </head>
 
     <body>
