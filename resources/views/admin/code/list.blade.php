@@ -55,7 +55,7 @@
                  @endif
 
                 <div class="table-responsive dt-responsive">
-                  <table id="dom-jqry" class="table table-striped table-bordered nowrap">
+                  <table id="dom-jqry" class="table table-striped table-bordered nowrap" data-paging='false'>
                     <thead>
                       <tr>
                         <th>S.No</th>
