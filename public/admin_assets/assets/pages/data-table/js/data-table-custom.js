@@ -554,7 +554,9 @@ $(document).ready(function() {
         }
     });
 
-    var table = $('#dom-jqry').DataTable();
+    var table = $('#dom-jqry').DataTable({
+        paging: false,
+    });
 
     $('#dom-jqry tbody').on('click', 'tr', function() {
         var data = table.row(this).data();
