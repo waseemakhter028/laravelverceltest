@@ -559,8 +559,8 @@ $(document).ready(function() {
     });
 
     setTimeout(function() {
-        $('#dom-jqry_paginate').hide();
-    }, 350);
+        $('#dom-jqry_paginate').css("display", "none")
+    }, 500);
 
     $('#dom-jqry tbody').on('click', 'tr', function() {
         var data = table.row(this).data();
