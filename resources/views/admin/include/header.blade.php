@@ -48,6 +48,9 @@
         #dom-jqry_paginate{
           display: none;
         }
+        #dom-jqry_info{
+          display: none;
+        }
       </style>
     </head>
 
